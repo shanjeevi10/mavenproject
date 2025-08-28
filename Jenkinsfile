@@ -14,6 +14,12 @@ pipeline {
                 sh 'mvn test'
             }
         }
+     tage('package'){
+            steps{
+                echo"Hello package stage"
+                sh 'mvn package'
+            }
+        }
         stage('deploy'){
             steps{
                 echo "Hello deploy stage"
