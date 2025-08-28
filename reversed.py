@@ -1,2 +1,2 @@
-text = input("enter text:arulmozhivarman ")
+text = input("enter text:arulmozhivarman")
 print("Reversed:",text[::-1])
