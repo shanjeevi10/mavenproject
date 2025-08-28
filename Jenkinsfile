@@ -1,35 +1,23 @@
 pipeline {
     agent any
-
-    tools {
-        maven 'mvn-local'   // Use your actual configured Maven tool name
-        jdk 'jdk-local'     // Use your actual configured JDK name
-    }
-
     stages {
-        stage('Build') {
-            steps {
-                echo "Building the project using Maven"
-                sh 'mvn clean package'
+        stage('buld'){
+            steps{
+                echo "Hello build stage"
+                sh 'hostname'
             }
         }
-        stage('Test') {
-            steps {
-                echo "Running unit tests"
-                sh 'mvn test'
+        stage('test'){
+            steps{
+                echo "Hello test stage"
+                sh 'pwd'
             }
         }
-        stage('Run') {
-            steps {
-                echo "Running the application"
+        stage('deploy'){
+            steps{
+                echo "Hello deploy stage"
                 sh 'java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App'
             }
-        }
-        stage('Deploy') {
-            steps {
-                echo "Deploy stage (placeholder)"
-                sh 'java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App'
-            }
-        }
+        }    
     }
-}
+}    
