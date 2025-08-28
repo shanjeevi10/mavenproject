@@ -13,7 +13,7 @@ pipeline {
                 sh 'pwd'
             }
         }
-        stage('deploy'){
+        stage('Run python'){
             steps{
                 echo "Hello deploy stage"
                 sh 'python3 reversed.py'
