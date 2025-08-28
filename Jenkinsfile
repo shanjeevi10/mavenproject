@@ -5,13 +5,13 @@ pipeline {
         stage('buld'){
             steps{
                 echo"Hello build stage"
-                sh 'hostname'
+                sh 'mvn compile'
             }
         }
         stage('test'){
             steps{
                 echo"Hello test stage"
-                sh 'pwd'
+                sh 'mvn test'
             }
         }
         stage('deploy'){
