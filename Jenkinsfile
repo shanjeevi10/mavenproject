@@ -16,7 +16,7 @@ pipeline {
         stage('deploy'){
             steps{
                 echo "Hello deploy stage"
-                sh 'python reversed.py'
+                sh 'python3 reversed.py'
             }
         }    
     }
