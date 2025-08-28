@@ -1,23 +1,36 @@
 pipeline {
     agent any
+
     stages {
-        stage('buld'){
-            steps{
-                echo "Hello build stage"
-                sh 'hostname'
+        stage('Build') {
+            steps {
+                echo "Building the project using Maven"
+                sh 'mvn clean package'
             }
         }
-        stage('test'){
-            steps{
-                echo "Hello test stage"
-                sh 'pwd'
+        stage('Test') {
+            steps {
+                echo "Running unit tests"
+                sh 'mvn test'
             }
         }
-        stage('Run python'){
-            steps{
-                echo "Hello deploy stage"
+        stage('Run Java') {
+            steps {
+                echo "Running the Java application"
+                sh 'java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App'
+            }
+        }
+        stage('Run Python') {
+            steps {
+                echo "Running the Python script"
                 sh 'python3 reversed.py'
             }
-        }    
+        }
+        stage('Deploy') {
+            steps {
+                echo "Deploy stage (placeholder)"
+                sh 'date'
+            }
+        }
     }
-}    
+}
