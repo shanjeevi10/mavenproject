@@ -1,2 +1,1 @@
-text = input("Enter text:arulmozhivarman")
-print("Reversed:", text[::-1])
+print("hello World!")
