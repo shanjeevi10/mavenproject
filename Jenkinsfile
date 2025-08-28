@@ -16,8 +16,8 @@ pipeline {
         }
         stage('deploy'){
             steps{
-                echo"Hello deploy stage"
-                sh 'date'
+                echo"Hello World"
+                sh 'java'
             }
         }    
     }
