@@ -1,3 +1,2 @@
-n = arulmozhivarman
-text = int(input(n))
+text = input("Enter text:arulmozhivarman")
 print("Reversed:", text[::-1])
